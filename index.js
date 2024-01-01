@@ -12,10 +12,14 @@ function createWindow() {
       width: width / 2, // Half of the screen width
       height: height, // Full screen height
       x: width / 2,
-			y: 0,
+      y: 0,
+      title: 'Better Notes',
+      frame: false, // Disable the default frame
+      titleBarStyle: 'hidden',
       webPreferences: {
         nodeIntegration: true,
       },
+      icon: path.join(__dirname, 'assets/new-note.png'),
     });
 
     // Load the index.html of the app.
