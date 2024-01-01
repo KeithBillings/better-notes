@@ -13,14 +13,31 @@ function createWindow() {
       height: height, // Full screen height
       x: width / 2,
       y: 0,
-      title: 'Better Notes',
+      title: 'BetterNotes', // this is not working
       frame: false, // Disable the default frame
       titleBarStyle: 'hidden',
       webPreferences: {
         nodeIntegration: true,
       },
-      icon: path.join(__dirname, 'assets/new-note.png'),
+      icon: path.join(__dirname, '/assets/logo.png'),
     });
+
+    if (process.platform === 'darwin') {
+      // Set the dock icon (MacOS)
+      const filePath = path.join(__dirname, 'assets/logo.png');
+      app.dock.setIcon(filePath);
+
+      // Set the about panel options (MacOS)
+      app.setAboutPanelOptions({
+        applicationName: 'BetterNotes',
+        applicationVersion: '0.0.1',
+        version: 'Inital Release',
+        credits: 'Keith Billings',
+        authors: 'Keith Billings',
+        iconPath: filePath,
+        text: 'A better way to take notes.',
+      });
+    }
 
     // Load the index.html of the app.
     win.loadFile('index.html');
