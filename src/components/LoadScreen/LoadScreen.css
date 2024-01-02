@@ -23,16 +23,17 @@
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 1;
   animation: loading-fade-out 0.3s 2s forwards;
-	background-color: #e6f5fb;
+  background-color: #e6f5fb;
 }
 .load-screen img {
   height: 200px;
   width: 200px;
-  margin: auto;
+  margin: 0 auto;
   scale: 0;
   animation: loading-zoom-in 0.5s forwards;
 }
