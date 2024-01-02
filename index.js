@@ -1,3 +1,5 @@
+const isDev = require('electron-is-dev');
+
 const { app, BrowserWindow, screen, ipcMain } = require('electron');
 const fs = require('fs');
 const path = require('path');
@@ -22,6 +24,15 @@ function createWindow() {
       icon: path.join(__dirname, '/assets/logo.png'),
     });
 
+		isDev ? console.log('Running in development') : console.log('Running in production');
+
+
+    win.loadURL(
+      isDev
+        ? 'http://localhost:3000' // URL from Webpack Dev Server
+        : `file://${path.join(__dirname, '../dist/index.html')}` // Production path
+    );
+
     if (process.platform === 'darwin') {
       // Set the dock icon (MacOS)
       const filePath = path.join(__dirname, 'assets/logo.png');
@@ -40,7 +51,7 @@ function createWindow() {
     }
 
     // Load the index.html of the app.
-    win.loadFile('index.html');
+    // win.loadFile('dist/index.html');
   });
 }
 
