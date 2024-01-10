@@ -1,4 +1,4 @@
-/* Base CSS Reset and Styles */
+/* Base Reset and Styles */
 
 /* Box sizing rules */
 *,
@@ -30,8 +30,8 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* Make images easier to work with */
@@ -63,8 +63,4 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-.App {
-
 }

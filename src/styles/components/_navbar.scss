@@ -1,0 +1,38 @@
+.navbar {
+  height: 35px;
+  background-color: $color-secondary-light;
+  width: 100%;
+  position: relative;
+
+  .title {
+    color: $color-tertiary-light;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 1.5px;
+    pointer-events: none;
+  }
+
+  .links {
+    height: 100%;
+    padding: 7px;
+    margin-left: 70px;
+
+    .link {
+      height: 100%;
+      width: fit-content;
+
+      .icon {
+        height: 20px;
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
